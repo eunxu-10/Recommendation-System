@@ -1,2 +1,3 @@
 # Recommendation-System
-:books: korean webtoon recommendation system (Naver and Daum) 
+:books: korean webtoon recommendation system 
+(Naver and Daum) 
