@@ -18,13 +18,9 @@ def main():
     for key, value in enumerate(class_to_idx):
         idx_to_class[key] = value
 
-    # print(class_to_idx)
-    thumb_img_class, wbt_img = imgList(wbt_data)
-
-    # print(wbt_img)
     total_arr, label_arr = style_extract(wbt_data, resnet)
-    # # print(len(total_arr)) # 79488
-    #
+    # print(len(total_arr)) # 79488
+    
     total_result = np.array([])
     len_total_arr = len(total_arr)
     for step in range(0, len_total_arr, 800):
@@ -33,9 +29,12 @@ def main():
             total_result = result
         else:
             total_result = np.vstack((total_result, result))
+            
     avg_list = avgList(total_result, label_arr)
     np_avg_list = np.array(avg_list)
     np.save("./avg_list", np_avg_list)
+    
+    wbt_img = imgList()
     for i in range(len(avg_list)):
         img_path = wbt_img[i]
         imscatter(avg_list[i][0], avg_list[i][1], image=img_path, zoom=0.4, show_by_thumnail=True,

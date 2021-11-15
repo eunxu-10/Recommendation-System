@@ -4,12 +4,11 @@ from sklearn.manifold import TSNE
 
 
 def style_extract(data, resnet):
-    total_arr = []
-    label_arr = []
+    total_arr, label_arr = [], []
 
-    for idx,(image,label) in enumerate(data):
+    for idx,(image, label) in enumerate(data):
         i = image.cuda()
-        i = i.view(-1,i.size()[0],i.size()[1],i.size()[2])
+        i = i.view(-1,i.size()[0], i.size()[1], i.size()[2])
 
         style_target = list(GramMatrix().cuda()(i) for i in resnet(i))
 

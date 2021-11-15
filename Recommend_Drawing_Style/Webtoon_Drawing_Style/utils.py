@@ -1,20 +1,16 @@
 import os
 import numpy as np
 
-def imgList(data, config='config.json'):
-
+def imgList():
     thumnail_path = "./D_thumb_img_chap_class"
     wbt_path = "./D_thumb_img_wbt"
-    thumb_img_class, wbt_img = [], []
-
-    for img in data.imgs:
-        thumb_img_class.append(img[0])
+    wbt_img = []
 
     for img in os.listdir(thumnail_path):
       wbt_img.append(os.path.join(wbt_path,img+".png"))
     wbt_img.sort()
 
-    return thumb_img_class, wbt_img
+    return wbt_img
 
 def avgList(result, label_arr):
 

@@ -13,7 +13,6 @@ def imscatter(x, y, image, ax=None, zoom=1, show_by_thumnail=False, title='webto
     im = OffsetImage(image, zoom=zoom)
 
     # Convert inputs to arrays with at least one dimension. 입력 값을 1 차원 이상의 배열로 변환합니다.
-    #
     # 스칼라 입력은 1 차원 배열로 변환되는 반면 더 높은 차원의 입력은 유지됩니다.
     x, y = np.atleast_1d(x, y)
 
