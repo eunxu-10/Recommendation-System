@@ -1,5 +1,5 @@
 matplotlib==3.4.3
 numpy==1.21.2
-sklear==0.0
+sklearn==0.0
 torch==1.7.1+cu110
 torchvision==0.8.2+cu110
