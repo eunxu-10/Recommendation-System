@@ -49,6 +49,6 @@ python main.py
 ```
 #### 비슷한 그림체끼리 묶기
 ```
-python k_means_clusterin.py
+python k_means_clustering.py
 python classify_cluster.py
 ```
