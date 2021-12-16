@@ -25,7 +25,6 @@ def style_extract(data, resnet):
     return total_arr, label_arr
 
 def tsne(total_arr, n_components, perplexity):
-    # n_components=2: 2차원으로 차원 축소
     model = TSNE(n_components=2, init='pca',random_state=0, verbose=3, perplexity=100)
     result = model.fit_transform(total_arr)
 

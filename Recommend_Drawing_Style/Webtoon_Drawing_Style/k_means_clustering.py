@@ -10,8 +10,6 @@ for f in file:
 
 np_points = np.load("./avg_list.npy")
 points = pd.DataFrame(np_points)
-# print(points)
-# print(type(points)) #1203개
 
 # k-means clustering 실행
 kmeans = KMeans(n_clusters=12)
