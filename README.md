@@ -8,8 +8,14 @@
 결론적으로 좋아하는 만화를 검색하면 이와 비슷한 장르의 만화를 별점 순으로 추천해주거나 좋아하는 그림체를 선택하면 이와 비슷한 그림체의 만화를 추천해주는 웹사이트를 개발하였다.
 
 
-## 프로젝트 소개 & 시연 영상
-[![이미지](https://img.youtube.com/vi/QH6CKN6mb8M/0.jpg)](https://www.youtube.com/watch?v=QH6CKN6mb8M&t=0s)
+## 프로젝트 내용
+### 그림체로 추천
+- 그림체를 추출하기 위해 Style Transfer에서 Content Loss를 구하는 부분을 사용하지 않고 Style Loss만을 활용
+- 즉, 이미지의 style을 추출하는 작업만 수행하여 웹툰의 그림체를 추출
+- 한 웹툰의 여러 회차별 썸네일 데이터를 이용해서 해당 웹툰의 그림체 feature를 추출
+- 추출한 feature를 고차원을 저차원으로 나타내주는 t-SNE를 활용하여 2차원 벡터로 나타냄.
+- 2차원 벡터로 나타낸 회차별 썸네일 데이터의 feature를 평균을 내 해당 웹툰의 벡터로 지정
+- 얻은 벡터를 K-means clustering을 통해 군집화
 
 ## Code Components
 ```
@@ -40,7 +46,7 @@
 ```
 
 ## How to Use
-### 그림체 추천
+### 그림체로 추천
 #### 그림체 추출
 ```
 cd Recommed_Drawing_Style/Webtoon_Drawling_Style
@@ -52,3 +58,6 @@ python main.py
 python k_means_clustering.py
 python classify_cluster.py
 ```
+
+## 시연 영상
+https://user-images.githubusercontent.com/69044270/146791632-fd26ce39-dcb0-444d-be03-fcf24fd7ed92.mp4
