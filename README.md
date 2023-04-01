@@ -19,38 +19,43 @@
 
 ## Code Components
 ```
-├── D_Webtoon_Crawling_Code
-│   ├── Daum_comment_crawling_multiprocessing.py
-│   ├── Daum_comment_crawling.ipynb
-│   ├── Daum_thumbnail_crawling.ipynb
-│   └── Daum_toonsinfo_crawling.ipynb
-├── N_Webtoon_Crawling_Code
-│   ├── Naver_comment_crawling.py
-│   ├── Naver_thumbnail_crawling.py
-│   └── Naver_toonsinfo_crawling.py
-├── Recommend_Drawling_Style
-│   ├── Webtoon_Drawling_Style
-│   │   ├── Classify_cluster.ipynb
-|   │   ├── k_means_clustering.py
-│   │   ├── loss.py
-│   │   ├── main.py
-│   │   ├── requirements.txt
-│   │   ├── train.py
-│   │   ├── utils.py
-│   │   └── visualization.py
-│   ├── download_n_webtoon_images.ipynb
-│   └── download_d_webtoon_images.ipynb
-├── README.md
-├── Genre_Recommendation_Code.ipynb
+├── crawling
+|   ├── daum
+|   |   ├── comment_multiprocessing.py
+|   |   ├── comment.ipynb
+|   |   ├── thumbnail.ipynb
+|   |   └── toonsinfo.ipynb
+|   └── naver
+|      ├── comment.py
+|      ├── thumbnail.py
+|      └── toonsinfo.py
+├── recommmend
+│   ├── drawling-style
+|   |   ├── extract
+|   │   │   ├── classify_cluster.py
+|   |   │   ├── k_means_clustering.py
+|   │   │   ├── loss.py
+|   │   │   ├── main.py
+|   │   │   ├── model.py
+|   │   │   ├── requirements.txt
+|   │   │   ├── train.py
+|   │   │   ├── utils.py
+|   │   │   └── visualization.py
+|   |   └── extract
+|   |       ├── n_webtoon_images.ipynb
+|   |       └── d_webtoon_images.ipynb
+|   └── genre.ipynb
 └── README.md
 ```
 
 ## How to Use
 ### 그림체로 추천
+```
+cd recommend/drawling-style/extract
+pip install -r requirements.txt
+```
 #### 그림체 추출
 ```
-cd Recommed_Drawing_Style/Webtoon_Drawling_Style
-pip install -r requirements.txt
 python main.py
 ```
 #### 비슷한 그림체끼리 묶기
@@ -58,6 +63,5 @@ python main.py
 python k_means_clustering.py
 python classify_cluster.py
 ```
-
 ## 시연 영상
 https://user-images.githubusercontent.com/69044270/146791632-fd26ce39-dcb0-444d-be03-fcf24fd7ed92.mp4
